@@ -1,9 +1,9 @@
 import 'package:bookly_app/core/utilities/styles.dart';
-import 'package:bookly_app/core/widgets/custome_button.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_button_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custome_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custome_book_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -21,7 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * 0.2),
             child: const CustomeBookImage(),
           ),
-          const SizedBox(height: 43),
+          const SizedBox(height: 30),
           Text(
             'The Jungle Book',
             style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
@@ -37,10 +37,20 @@ class BookDetailsViewBody extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 18),
+          const SizedBox(height: 10),
           const BookRating(mainAxisAlignment: MainAxisAlignment.center),
-          const SizedBox(height: 37),
+          const SizedBox(height: 30),
           const BookButtonAction(),
+          const SizedBox(height: 30),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const SimilarBooksListView(),
         ],
       ),
     );
