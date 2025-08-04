@@ -16,7 +16,7 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
           child: CustomeBookImage(
             imageUrl:
-                'https://www.bing.com/images/search?view=detailV2&ccid=dUrbYWuv&id=2C09E84EDE4EBA73D3697A2F356AF17FD1F103B9&thid=OIP.dUrbYWuvUqtb5xocbSY3XAHaFh&mediaurl=https%3a%2f%2fpluspng.com%2fimg-png%2fnovel-png-over-the-horizon-by-david-thoreson-1000.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.754adb616baf52ab5be71a1c6d26375c%3frik%3duQPx0X%252fxajUveg%26pid%3dImgRaw%26r%3d0&exph=745&expw=1000&q=novel+image+png&simid=608020778791078612&FORM=IRPRST&ck=DDFA0DC6CB149BA6AE28424E4DD9656F&selectedIndex=16&itb=1',
+                'https://ts3.mm.bing.net/th?id=OIP.vDNRay2iy8gkI1Cn9aaeVAAAAA&pid=15.1',
           ),
         ),
         const SizedBox(height: 43),
