@@ -49,7 +49,7 @@ class HomeRepoImplementation implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, List<BookModel>>> fetchimilarBooks({
+  Future<Either<Failures, List<BookModel>>> fetchSimilarBooks({
     required String categorie,
   }) async {
     try {
