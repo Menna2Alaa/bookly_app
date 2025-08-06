@@ -1,9 +1,11 @@
+import 'package:bookly_app/core/utilities/app_router.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custome_book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custome_error_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custome_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -22,10 +24,18 @@ class FeaturedBooksListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomeBookImage(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                        'https://www.bing.com/images/search?view=detailV2&id=00399E3400150470DC79B0A89985706837E8AA27&thid=OIP.ArqTHvk6aGiQe9iMai8NnwHaJs&mediaurl=https%3a%2f%2fwww.intelligent.com%2fwp-content%2fuploads%2f2022%2f08%2fIntroduction-to-Algorithms.png&exph=670&expw=512&q=best+computer+science+books+2023&simid=608023274148686621&ck=2F1FC6FE4DA6EF589F131D0108583BE4&itb=0&FORM=IVCLIG',
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(
+                        AppRouter.kBookDetailsView,
+                        extra: state.books[index],
+                      );
+                    },
+                    child: CustomeBookImage(
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                          'https://www.bing.com/images/search?view=detailV2&id=00399E3400150470DC79B0A89985706837E8AA27&thid=OIP.ArqTHvk6aGiQe9iMai8NnwHaJs&mediaurl=https%3a%2f%2fwww.intelligent.com%2fwp-content%2fuploads%2f2022%2f08%2fIntroduction-to-Algorithms.png&exph=670&expw=512&q=best+computer+science+books+2023&simid=608023274148686621&ck=2F1FC6FE4DA6EF589F131D0108583BE4&itb=0&FORM=IVCLIG',
+                    ),
                   ),
                 );
               },
