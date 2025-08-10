@@ -2,17 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomeSearchTextField extends StatelessWidget {
-  const CustomeSearchTextField({super.key});
+  const CustomeSearchTextField({
+    super.key,
+    required this.controller,
+    required this.onSearchPressed,
+  });
+
+  final TextEditingController controller;
+  final VoidCallback onSearchPressed;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
+      onSubmitted: (_) => onSearchPressed(),
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'search',
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: onSearchPressed,
           icon: Opacity(
             opacity: 0.8,
             child: Icon(FontAwesomeIcons.magnifyingGlass, size: 22),
